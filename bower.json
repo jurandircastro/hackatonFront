@@ -1,0 +1,18 @@
+{
+  "name": "medidacerta",
+  "version": "0.0.1",
+  "authors": [
+    "Dream Team"
+  ],
+  "description": "Medida Certa é um sistema de uma loja.",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.3.0",
+    "angular-route": "~1.5.0",
+    "jquery": "^3.1.1",
+    "angular-ui-router": "^0.4.2",
+  },
+  "resolutions": {
+    "angular": "1.6.1"
+  }
+}
