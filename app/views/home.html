@@ -8,7 +8,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand" href="#page-top">Dominus</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,11 +35,11 @@
         <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="../assets/img/profile.png" alt="">
+                    <img class="img-responsive" src="../assets/img/profile.png" alt="" width="200px">
                     <div class="intro-text">
-                        <h1 class="name">Start Bootstrap</h1>
+                        <h1 class="name">Otimize seu tempo</h1>
                         <hr class="star-light">
-                        <span class="skills">Web Developer - Graphic Artist - User Experience Designer</span>
+                        <span class="skills">Encontre os melhores planos de aula - Planeje suas aulas - Compartilhe com outros professores</span>
                     </div>
                 </div>
             </div>
@@ -57,64 +57,32 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="../assets/img/portfolio/cabin.png" class="img-responsive" alt="Cabin">
-                    </a>
+                    <button type="button" class="btn btn-success btn-lg">
+                      <span class="fa fa-plus fa-3x" aria-hidden="true"></span> Criar plano
+                    </button>
                 </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="../assets/img/portfolio/cake.png" class="img-responsive" alt="Slice of cake">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="../assets/img/portfolio/circus.png" class="img-responsive" alt="Circus tent">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="../assets/img/portfolio/game.png" class="img-responsive" alt="Game controller">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="../assets/img/portfolio/safe.png" class="img-responsive" alt="Safe">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="../assets/img/portfolio/submarine.png" class="img-responsive" alt="Submarine">
-                    </a>
+
+                <div class="col-sm-8 portfolio-item">
+                 <fieldset class="form-group">
+                 <form>
+                 <legend>Dados do plano de aula</legend>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Série</span>
+
+                        <select class="form-control" id="inlineFormCustomSelect">
+                            <option selected >Selecione uma série</option>
+                            <option value="3">3º ano - Ensino Médio</option>
+                            <option value="2">2º ano - Ensino Médio</option>
+                            <option value="1">1º ano - Ensino Médio</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Tema</span>
+                      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                    </div>         
+                 </fieldset>
+                </form>
                 </div>
             </div>
         </div>
