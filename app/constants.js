@@ -1,19 +1,13 @@
-angular.module('Teste')
+angular.module('hackaton')
   .constant('httpRequest', httpRequest);
 
 function httpRequest(url, method, data, $q, $http) {
   const deferred = $q.defer();
-  const baseUrl = 'https:///v3/';
+  const baseUrl = '';
 
-  var mailgunApiKey = window.btoa("api:key-a3b4c20ce0277d7d128e5829aad5e0d1")
-
-  $http({
+   $http({
     method: method,
-    url: baseUrl + url + "/messages",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-      "Authorization": "Basic " + mailgunApiKey
-      },
+    url: baseUrl + url,
     data: data
   })
   .then((data, status, headers, config) => {

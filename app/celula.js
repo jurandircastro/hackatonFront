@@ -1,4 +1,4 @@
-angular.module('Celula',
+angular.module('hackaton',
   [
     'ui.router',
   ]
