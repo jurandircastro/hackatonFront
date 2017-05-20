@@ -57,36 +57,79 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <button type="button" ng-click="botaoCriarPlano();" class="btn btn-success btn-lg">
+                    <button type="button" ng-click="btnAbrirFormPlano();" class="btn btn-success btn-lg">
                       <span class="fa fa-plus fa-3x" aria-hidden="true"></span> Criar plano
                     </button>
                 </div>
 
                 <div class="col-sm-8 portfolio-item">
-                 <fieldset class="form-group">
                  <form ng-show="criarPlano">
+
+                 <fieldset class="form-group">
                  <legend>Dados do plano de aula</legend>
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Série</span>
 
                         <select class="form-control" id="inlineFormCustomSelect">
-                            <option selected >Selecione uma série</option>
+                            <option selected disabled>Selecione uma série</option>
                             <option value="3">3º ano - Ensino Médio</option>
                             <option value="2">2º ano - Ensino Médio</option>
                             <option value="1">1º ano - Ensino Médio</option>
                         </select>
                     </div>
 
+                    <br/>
+                    
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">Tema</span>
-                      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                      <input type="text" class="form-control" placeholder="Tema" aria-describedby="basic-addon1">
                     </div>   
 
+                    <br/>
+
                     <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">Objetivos</span>
-                      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                    </div> 
+                      <span class="input-group-addon" id="basic-addon1">Conteúdo</span>
+                      <textarea class="form-control" rows="5"></textarea>
+                    </div>
+                    
+                    <br/>
+
+                    <fieldset class="form-group">
+                    <legend>Objetivos</legend>
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">Objetivos</span>
+                          <input type="text" class="form-control" placeholder="Objetivo" aria-describedby="basic-addon1">
+                        </div>
+                    </fieldset>
+
+                    <hr/>
+                    <br/>
+
+                    <fieldset class="form-group">
+                    <legend>Procedimentos</legend>
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">Procedimento</span>
+                          <input type="text" class="form-control" placeholder="Objetivo" aria-describedby="basic-addon1">
+                        </div>
+                    </fieldset>
+
+                    <hr/>
+                    <br/>
+
+                    <fieldset class="form-group">
+                    <legend>Estratégias</legend>
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">Estratégia</span>
+                          <input type="text" class="form-control" placeholder="Objetivo" aria-describedby="basic-addon1">
+                        </div>
+                    </fieldset>
+
+                    <hr/>
                  </fieldset>
+
+                 <button id="submit" name="submit" class="btn btn-success" type="submit">Salvar plano</button>
+                 <button id="submit" name="submit" class="btn btn-primary" ng-click="btnFecharFormPlano();planos()">Cancelar</button>
+
                 </form>
                 </div>
 

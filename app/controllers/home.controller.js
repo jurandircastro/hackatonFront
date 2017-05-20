@@ -11,7 +11,11 @@ function HomeController ($scope, $state) {
       $('html, body').animate({ scrollTop: $("#planos").height() + $("#mainNav").height() }, 'slow');
     }
 
-    $scope.botaoCriarPlano = () => {
-        $scope.criarPlano = !$scope.criarPlano;
+    $scope.btnAbrirFormPlano = () => {
+        $scope.criarPlano = true;
+    }
+
+    $scope.btnFecharFormPlano = () => {
+        $scope.criarPlano = false;
     }
 }
