@@ -7,7 +7,8 @@ angular.module('hackaton').config(function($stateProvider, $urlRouterProvider, $
   $stateProvider
   .state('inicial', {
     url: '/home',
-    templateUrl: 'views/home.html'
-  });
+    templateUrl: 'views/home.html',
+    controller: 'HomeController'
+  })
 
 });

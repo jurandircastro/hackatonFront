@@ -3,7 +3,7 @@ angular.module('hackaton')
 
 function httpRequest(url, method, data, $q, $http) {
   const deferred = $q.defer();
-  const baseUrl = '';
+  const baseUrl = 'http://api-hackathon.herokuapp.com';
 
    $http({
     method: method,
