@@ -5,7 +5,13 @@ angular.module('hackaton')
 
 function HomeController ($scope, $state) {
 
-    $scope.bot = () => {
+    $scope.criarPlano = false;
+
+    $scope.planos = () => {
       $('html, body').animate({ scrollTop: $("#planos").height() + $("#mainNav").height() }, 'slow');
+    }
+
+    $scope.botaoCriarPlano = () => {
+        $scope.criarPlano = !$scope.criarPlano;
     }
 }
