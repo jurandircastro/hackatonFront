@@ -2,12 +2,12 @@
 
 angular.module('hackaton').config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-  $urlRouterProvider.otherwise('/inicial');
+  $urlRouterProvider.otherwise('/home');
 
   $stateProvider
   .state('inicial', {
-    url: '/inicial',
-    templateUrl: 'views/inicial.html'
+    url: '/home',
+    templateUrl: 'views/home.html'
   });
 
 });
