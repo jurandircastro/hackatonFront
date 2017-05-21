@@ -25,6 +25,16 @@ function HomeService($http, $q, httpRequest) {
             const method = 'GET';
             return httpRequest(url, method, data, $q, $http);
         },
+        objectClasses: (id, data) => {
+            const url = '/objectClasses/' + id;
+            const method = 'DELETE';
+            return httpRequest(url, method, data, $q, $http);
+        },
+        editObjectClass: (data) => {
+            const url = '/createObjectClass/' + "1";
+            const method = 'POST';
+            return httpRequest(url, method, data, $q, $http);
+        },
         
     };
     return factory;
