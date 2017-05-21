@@ -74,7 +74,7 @@
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Série</span>
 
-                        <select class="form-control" id="inlineFormCustomSelect">
+                        <select class="form-control" id="inlineFormCustomSelect" name="serie" ng-model="data.serie">
                             <option selected disabled>Selecione uma série</option>
                             <option value="3">3º ano - Ensino Médio</option>
                             <option value="2">2º ano - Ensino Médio</option>
@@ -86,14 +86,14 @@
 
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">Tema</span>
-                      <input type="text" class="form-control" placeholder="Tema" aria-describedby="basic-addon1">
+                      <input type="text" class="form-control" ng-model="tema" placeholder="Tema" aria-describedby="basic-addon1">
                     </div>   
 
                     <br/>
 
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">Conteúdo</span>
-                      <textarea class="form-control" rows="5"></textarea>
+                      <textarea class="form-control" ng-model="conteudo" rows="5"></textarea>
                     </div>
                     
                     <br/>
@@ -102,7 +102,7 @@
                     <legend>Objetivos</legend>
                         <div class="input-group">
                           <span class="input-group-addon" id="basic-addon1">Objetivos</span>
-                          <input type="text" class="form-control" placeholder="Objetivo" aria-describedby="basic-addon1">
+                          <input type="text" class="form-control" ng-model="objetivo" placeholder="Objetivo" aria-describedby="basic-addon1">
                         </div>
                     </fieldset>
 
@@ -113,7 +113,7 @@
                     <legend>Procedimentos</legend>
                         <div class="input-group">
                           <span class="input-group-addon" id="basic-addon1">Procedimento</span>
-                          <input type="text" class="form-control" placeholder="Objetivo" aria-describedby="basic-addon1">
+                          <input type="text" class="form-control" ng-model="procedimento" placeholder="Objetivo" aria-describedby="basic-addon1">
                         </div>
                     </fieldset>
 
@@ -124,14 +124,14 @@
                     <legend>Estratégias</legend>
                         <div class="input-group">
                           <span class="input-group-addon" id="basic-addon1">Estratégia</span>
-                          <input type="text" class="form-control" placeholder="Objetivo" aria-describedby="basic-addon1">
+                          <input type="text" class="form-control" ng-model="estrategia" placeholder="Objetivo" aria-describedby="basic-addon1">
                         </div>
                     </fieldset>
 
                     <hr/>
                  </fieldset>
 
-                 <button id="submit" name="submit" class="btn btn-success" type="submit">Salvar plano</button>
+                 <button id="submit" name="submit" class="btn btn-success" ng-click="novoPlano();" type="submit">Salvar plano</button>
                  <button id="submit" name="submit" class="btn btn-primary" ng-click="btnFecharFormPlano();planos()">Cancelar</button>
 
                 </form>
@@ -146,10 +146,13 @@
         <div class="container">
            <div class="container">
                 <div class="row">
-                    <h2>Slider Search box</h2>
-                    <div class="search">
-                        <input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
-                        <button type="submit" class="btn btn-primary btn-sm">Search</button>
+                    <h2>Pesquise um plano de aula</h2>
+                    <hr class="star-light">
+                    <div class="col-sm-7">
+                        <div class="search;input-group">
+                            <input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
+                            <button type="submit" class="btn btn-primary btn-sm">Procure</button>
+                        </div>
                     </div>
                 </div>
             </div>

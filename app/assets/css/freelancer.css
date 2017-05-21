@@ -1,45 +1,45 @@
 #search {
-    float: right;
-    margin-top: 9px;
-    width: 250px;
+    float: right !important;
+    margin-top: 9px !important;
+    width: 250px !important;
 }
 
 .search {
-    padding: 5px 0;
-    width: 230px;
-    height: 30px;
-    position: relative;
-    left: 10px;
-    float: left;
-    line-height: 22px;
+    padding: 5px 0 !important;
+    width: 230px !important;
+    height: 30px !important;
+    position: relative !important;
+    left: 10px !important;
+    float: left !important;
+    line-height: 22px !important;
 }
 
     .search input {
-        position: absolute;
-        width: 0px;
-        float: Left;
-        margin-left: 210px;
-        -webkit-transition: all 0.7s ease-in-out;
-        -moz-transition: all 0.7s ease-in-out;
-        -o-transition: all 0.7s ease-in-out;
-        transition: all 0.7s ease-in-out;
-        height: 30px;
-        line-height: 18px;
-        padding: 0 2px 0 2px;
-        border-radius:1px;
+        position: absolute !important;
+        width: 0px !important;
+        float: Left !important;
+        margin-left: 210px !important;
+        -webkit-transition: all 0.7s ease-in-out !important;
+        -moz-transition: all 0.7s ease-in-out !important;
+        -o-transition: all 0.7s ease-in-out !important;
+        transition: all 0.7s ease-in-out !important;
+        height: 30px !important;
+        line-height: 18px !important;
+        padding: 0 2px 0 2px !important;
+        border-radius:1px !important;
     }
 
         .search:hover input, .search input:focus {
-            width: 200px;
-            margin-left: 0px;
+            width: 200px !important;
+            margin-left: 0px !important;
         }
 
 .btn {
-    height: 30px;
-    position: absolute;
-    right: 0;
-    top: 5px;
-    border-radius:1px;
+    height: 30px !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 5px !important;
+    border-radius:1px !important;
 }
 
 
