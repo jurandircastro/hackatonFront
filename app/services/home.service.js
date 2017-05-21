@@ -34,7 +34,7 @@ function HomeService($http, $q, httpRequest) {
             const url = '/createObjectClass/' + "1";
             const method = 'POST';
             return httpRequest(url, method, data, $q, $http);
-        },
+        }
         
     };
     return factory;

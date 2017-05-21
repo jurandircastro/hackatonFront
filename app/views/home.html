@@ -57,22 +57,10 @@
             </div>
             
             <br/>
-           <!-- <div tweets hashtag="hashtag" button="true" count="15" refresh="60"/> -->
-           <form name="form">
-            <div class="button" class="button-add" ngf-select ng-model="file" name="file"    ngf-max-size="10MB">UPLOAD</div>
-              <div>
-                <a class="btn btn-danger" ng-click="submit()" >Confirmar</a>
-            </div>
-            </form>
+           <!--<div tweets hashtag="hashtag" button="true" count="15" refresh="60"/>-->
             <br/>
             
             <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <button type="button" ng-click="btnAbrirFormPlano();" class="btn btn-success btn-sm">
-                      <span class="fa fa-plus fa-3x" aria-hidden="true"> Criar plano</span>
-                    </button>
-                </div>
-
                 <div class="col-sm-8 portfolio-item " ng-show="criarPlano">
                     <form>
 
@@ -81,7 +69,7 @@
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Série</span>
 
-                            <select class="form-control" id="inlineFormCustomSelect" name="serie" ng-model="data.serie">
+                            <select required class="form-control" id="inlineFormCustomSelect" name="serie" ng-model="data.serie">
                                 <option selected disabled>Selecione uma série</option>
                                 <option value="3">3º ano - Ensino Médio</option>
                                 <option value="2">2º ano - Ensino Médio</option>
@@ -93,14 +81,14 @@
 
                         <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Tema</span>
-                        <input type="text" class="form-control" ng-model="tema" placeholder="Tema" aria-describedby="basic-addon1">
+                        <input required type="text" class="form-control" ng-model="tema" placeholder="Tema" aria-describedby="basic-addon1">
                         </div>   
 
                         <br/>
 
                         <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Conteúdo</span>
-                        <textarea class="form-control" ng-model="conteudo" rows="5"></textarea>
+                        <textarea required class="form-control" ng-model="conteudo" rows="5"></textarea>
                         </div>
                         
                         <br/>
@@ -109,7 +97,7 @@
                         <legend>Objetivos</legend>
                             <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Objetivos</span>
-                            <input type="text" class="form-control" ng-model="objetivo" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            <input required type="text" class="form-control" ng-model="objetivo" placeholder="Objetivo" aria-describedby="basic-addon1">
                             </div>
                         </fieldset>
 
@@ -120,7 +108,7 @@
                         <legend>Procedimentos</legend>
                             <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Procedimento</span>
-                            <input type="text" class="form-control" ng-model="procedimento" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            <input required type="text" class="form-control" ng-model="procedimento" placeholder="Objetivo" aria-describedby="basic-addon1">
                             </div>
                         </fieldset>
 
@@ -131,7 +119,7 @@
                         <legend>Estratégias</legend>
                             <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Estratégia</span>
-                            <input type="text" class="form-control" ng-model="estrategia" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            <input required type="text" class="form-control" ng-model="estrategia" placeholder="Objetivo" aria-describedby="basic-addon1">
                             </div>
                         </fieldset>
 
@@ -143,6 +131,35 @@
 
                     </form>
                 </div>
+                 
+                 <div class="col-sm-12 portfolio-item ">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Tema</th>
+                            <th calspan=3>
+                                <button type="button" ng-click="btnAbrirFormPlano();" class="btn btn-success btn-sm">
+                                  Criar plano
+                                </button>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="plano in getMeusPlanos | filter:search as results">
+                            <td>{{plano.theme}}</td>                          
+                            <td><button class="btn btn-primary" ng-click="btnEdit(plano); btnAbrirEdit();">Editar</button></td>
+                            <td>
+                                <button class="btn btn-danger" ng-click="deletePlano(plano.id);">Remover</button>
+                            </td>
+                            <td>
+                                <form action="{{'api-hackathon.herokuapp.com/' + plano.id}}" method="post" enctype="multipart/form-data">
+                                    <input type="file" name="file" onchange="submit()">
+                                </form>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
 
                  <div class="col-sm-8 portfolio-item " ng-show="editarPlano">
                     <form>
@@ -152,7 +169,7 @@
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Série</span>
 
-                            <select class="form-control" id="inlineFormCustomSelect" name="serie" ng-model="planoAtual.serie">
+                            <select required class="form-control" id="inlineFormCustomSelect" name="serie" ng-model="planoAtual.serie">
                                 <option selected disabled>Selecione uma série</option>
                                 <option value="3">3º ano - Ensino Médio</option>
                                 <option value="2">2º ano - Ensino Médio</option>
@@ -164,14 +181,14 @@
 
                         <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Tema</span>
-                        <input type="text" class="form-control" ng-model="planoAtual.theme" placeholder="Tema" aria-describedby="basic-addon1">
+                        <input required type="text" class="form-control" ng-model="planoAtual.theme" placeholder="Tema" aria-describedby="basic-addon1">
                         </div>   
 
                         <br/>
 
                         <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Conteúdo</span>
-                        <textarea class="form-control" ng-model="planoAtual.content" rows="5"></textarea>
+                        <textarea required class="form-control" ng-model="planoAtual.content" rows="5"></textarea>
                         </div>
                         
                         <br/>
@@ -180,7 +197,7 @@
                         <legend>Objetivos</legend>
                             <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Objetivos</span>
-                            <input type="text" class="form-control" ng-model="planoAtual.objective" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            <input required type="text" class="form-control" ng-model="planoAtual.objective" placeholder="Objetivo" aria-describedby="basic-addon1">
                             </div>
                         </fieldset>
 
@@ -191,7 +208,7 @@
                         <legend>Procedimentos</legend>
                             <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Procedimento</span>
-                            <input type="text" class="form-control" ng-model="planoAtual.procedure" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            <input required type="text" class="form-control" ng-model="planoAtual.procedure" placeholder="Objetivo" aria-describedby="basic-addon1">
                             </div>
                         </fieldset>
 
@@ -202,7 +219,7 @@
                         <legend>Estratégias</legend>
                             <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Estratégia</span>
-                            <input type="text" class="form-control" ng-model="planoAtual.strategys" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            <input required type="text" class="form-control" ng-model="planoAtual.strategys" placeholder="Objetivo" aria-describedby="basic-addon1">
                             </div>
                         </fieldset>
 
@@ -217,6 +234,7 @@
 
                 </br>
                 </br>
+<<<<<<< HEAD
                  <table>
                     <tr ng-repeat="plano in getMeusPlanos | filter:search as results">
                         <td>{{plano.theme}}</td>                          
@@ -236,6 +254,9 @@
                     </tr>
                 </table>
 
+=======
+                
+>>>>>>> 7b42ccd526a18c915ea54a3130e7389b7e6ba1a5
             </div>
         </div>
     </section>

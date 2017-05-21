@@ -18,6 +18,6 @@ client.get('search/tweets', {q: 'node.js'}, function(error, tweets, response) {
 
 app.use(express.static(__dirname + '/app'));
 
-app.listen(process.env.PORT || 8080, () => {
-  console.log('Server runing in port 8080');
+app.listen(process.env.PORT || 9000, () => {
+  console.log('Server runing in port 9000');
 });
