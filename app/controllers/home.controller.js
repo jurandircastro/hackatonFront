@@ -6,6 +6,15 @@ angular.module('hackaton')
 function HomeController ($scope, $state, Upload, HomeService) {
 
     $scope.criarPlano = false;
+    $scope.editarPlano = false;
+
+    $scope.btnAbrirEdit = () => {
+        $scope.editarPlano = !$scope.editarPlano;
+    }
+
+    $scope.btnEdit = (plano) => {
+        $scope.planoAtual = plano;
+    }
 
     $scope.planos = () => {
       $('html, body').animate({ scrollTop: $("#planos").height() + $("#mainNav").height() }, 'slow');
@@ -31,7 +40,7 @@ function HomeController ($scope, $state, Upload, HomeService) {
             "procedure":[{
                 "text": $scope.procedimento
                 }],
-            "strategy":[{
+            "strategys":[{
                     "text": $scope.estrategia
                 }]
             };
@@ -78,7 +87,7 @@ function HomeController ($scope, $state, Upload, HomeService) {
             "procedure":[{
                 "text": planoAtual.procedimento
                 }],
-            "strategy":[{
+            "strategys":[{
                     "text": planoAtual.estrategia
                 }]
             };
@@ -122,6 +131,35 @@ function HomeController ($scope, $state, Upload, HomeService) {
         console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
     });
   };
+
+  $scope.editPlano = () => {
+        let sendPlano =
+            {
+            "id": $scope.planoAtual.id,
+            "serie" : $scope.planoAtual.serie,
+            "theme" : $scope.planoAtual.theme,
+            "objective":[{
+                "text": $scope.planoAtual.objective
+            }], 
+            "content": $scope.planoAtual.content,
+            "procedure":[{
+                "text": $scope.planoAtual.procedure
+                }],
+            "strategys":[{
+                    "text": $scope.planoAtual.strategys
+                }]
+            };
+        HomeService.editObjectClass(sendPlano).then((data) => {
+            getMeusPlanos();
+            console.log(data);
+        })
+        .catch((err) => {
+        $scope.errors = err.data;
+        });
+  }
+
+
+  $scope.hashtag = 'matematica';
 
   getMeusPlanos();
   getPlanos();
