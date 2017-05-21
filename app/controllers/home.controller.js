@@ -3,7 +3,7 @@
 angular.module('hackaton')
   .controller('HomeController', HomeController);
 
-function HomeController ($scope, $state, Upload, HomeService) {
+function HomeController ($scope, $state, HomeService) {
 
     $scope.criarPlano = false;
     $scope.editarPlano = false;
