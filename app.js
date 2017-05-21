@@ -4,16 +4,16 @@ const path = require('path');
 var Twitter = require('twitter');
 
 var client = new Twitter({
-  consumer_key: 'f4svGz32DbNA1rglyPI58L6MQ',
-  consumer_secret: '4HssFL5WicBbkKIYTTUCoR0JZ7FcjGJiB6a7SD7cQvrogJEfOR',
-  access_token_key: '3436070050-Uxl4F2Z3X76HYMETq6sT43in5noMxSvFkB60a1O',
-  access_token_secret: 'dDZE4wDzGi9tMcicGMEXeyJS2NquNEXyAathytVbZrjKb'
+    consumer_key: 'SKlsKtf2nGjuS3uPnY2z3QWyw',
+    consumer_secret: 'dIb2BfHhWj41mvwCOD61F43vUP2ObBg4XerEK0vaaIV6OsnXqM',
+    access_token_key: '112909344-j9uo5IDCxFFBt9EClc54c1pp3hdJa7xoDXXOIeth',
+    access_token_secret: 'CFDMaUeQeJU5XL9sWXtKXSTGsJMVDLQq2O44UToMHyfI5'
 });
 
 var params = {screen_name: 'nodejs'};
 client.get('statuses/user_timeline', params, function(error, tweets, response) {
   if (!error) {
-    console.log(tweets);
+    //console.log(tweets);
   }
 });
 
