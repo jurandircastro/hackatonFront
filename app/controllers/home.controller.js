@@ -92,7 +92,8 @@ function HomeController ($scope, $state, HomeService) {
   }
 
   $scope.deletePlano = (id) => {
-        HomeService.copyObjectClass(id).then((data) => {
+      console.log(id);
+        HomeService.objectClasses(id).then((data) => {
             getMeusPlanos();
             console.log(data);
         })
