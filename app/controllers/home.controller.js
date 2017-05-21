@@ -42,4 +42,16 @@ function HomeController ($scope, $state, HomeService) {
         $scope.errors = err.data;
     });
   }
+
+  let getPlanos = () => {
+    HomeService.allMyObjectClass().then((data) => {
+        $scope.getPlanos = data.data;
+        console.log(data.data);
+    })
+    .catch((err) => {
+        $scope.errors = err.data;
+    });
+  }
+
+  getPlanos();
 }

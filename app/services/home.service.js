@@ -10,6 +10,12 @@ function HomeService($http, $q, httpRequest) {
             const method = 'POST';
             return httpRequest(url, method, data, $q, $http);
         },
+          allMyObjectClass: (data) => {
+            const url = '/allMyObjectClass/' + "1";
+            const method = 'GET';
+            return httpRequest(url, method, data, $q, $http);
+        },
+        
     };
     return factory;
 }

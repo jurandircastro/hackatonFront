@@ -146,9 +146,12 @@
                     <hr class="star-light">
                     <div class="col-sm-7">
                         <div class="search;input-group">
-                            <input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
+                            <input class="form-control input-sm" id="search" ng-model="search" name="search" type="search" placeholder="Search" />
                             <button type="submit" class="btn btn-primary btn-sm">Procure</button>
                         </div>
+                    </div>
+                    <div class="col s4" ng-repeat="plano in getPlanos | filter:search as results">
+                        <h2>{{plano.serie}}</h2>
                     </div>
                 </div>
             </div>
