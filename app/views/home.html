@@ -57,16 +57,10 @@
             </div>
             
             <br/>
-           <div tweets hashtag="hashtag" button="true" count="15" refresh="60"/>
+           <!--<div tweets hashtag="hashtag" button="true" count="15" refresh="60"/>-->
             <br/>
             
             <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <button type="button" ng-click="btnAbrirFormPlano();" class="btn btn-success btn-sm">
-                      <span class="fa fa-plus fa-3x" aria-hidden="true"> Criar plano</span>
-                    </button>
-                </div>
-
                 <div class="col-sm-8 portfolio-item " ng-show="criarPlano">
                     <form>
 
@@ -136,6 +130,35 @@
                     <button id="submit" name="submit" class="btn btn-primary" ng-click="btnFecharFormPlano();planos()">Cancelar</button>
 
                     </form>
+                </div>
+                 
+                 <div class="col-sm-12 portfolio-item ">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Tema</th>
+                            <th calspan=3>
+                                <button type="button" ng-click="btnAbrirFormPlano();" class="btn btn-success btn-sm">
+                                  Criar plano
+                                </button>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="plano in getMeusPlanos | filter:search as results">
+                            <td>{{plano.theme}}</td>                          
+                            <td><button class="btn btn-primary" ng-click="btnEdit(plano); btnAbrirEdit();">Editar</button></td>
+                            <td>
+                                <button class="btn btn-danger" ng-click="deletePlano(plano.id);">Remover</button>
+                            </td>
+                            <td>
+                                <form action="{{'api-hackathon.herokuapp.com/' + plano.id}}" method="post" enctype="multipart/form-data">
+                                    <input type="file" name="file" onchange="submit()">
+                                </form>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                 </div>
 
                  <div class="col-sm-8 portfolio-item " ng-show="editarPlano">
@@ -211,14 +234,7 @@
 
                 </br>
                 </br>
-                 <table>
-                    <tr ng-repeat="plano in getMeusPlanos | filter:search as results">
-                        <td>{{plano.theme}}</td>                          
-                        <td><button class="btn btn-primary" ng-click="btnEdit(plano); btnAbrirEdit();" type="submit">Editar</button></td>
-                        <td><button class="btn btn-danger" ng-click="deletePlano(plano.id);" type="submit">Remover</button></td>
-                    </tr>
-                </table>
-
+                
             </div>
         </div>
     </section>
