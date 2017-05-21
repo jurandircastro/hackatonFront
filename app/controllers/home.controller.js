@@ -64,7 +64,7 @@ function HomeController ($scope, $state, HomeService) {
     });
   }
 
-      $scope.copiarPlano = (plano) => {
+    $scope.copiarPlano = (plano) => {
         let planoAtual = plano;
         let copiarPlano =
             {
@@ -83,6 +83,16 @@ function HomeController ($scope, $state, HomeService) {
                 }]
             };
         HomeService.copyObjectClass(copiarPlano, planoAtual.id).then((data) => {
+            getMeusPlanos();
+            console.log(data);
+        })
+        .catch((err) => {
+        $scope.errors = err.data;
+        });
+  }
+
+  $scope.deletePlano = (id) => {
+        HomeService.copyObjectClass(id).then((data) => {
             getMeusPlanos();
             console.log(data);
         })

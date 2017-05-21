@@ -22,7 +22,12 @@ function HomeService($http, $q, httpRequest) {
         },
         copyObjectClass: (data, id) => {
             const url = '/copyObjectClass/' + "1/" + id;
-            const method = 'POST';
+            const method = 'GET';
+            return httpRequest(url, method, data, $q, $http);
+        },
+        objectClasses: (id) => {
+            const url = '/objectClasses/' + id;
+            const method = 'DELETE';
             return httpRequest(url, method, data, $q, $http);
         },
         
