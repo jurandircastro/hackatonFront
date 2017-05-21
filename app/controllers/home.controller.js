@@ -111,17 +111,18 @@ function HomeController ($scope, $state, Upload, HomeService) {
         });
   }
 
-    $scope.submit = () =>{
+    $scope.submit = (id) =>{
       if ($scope.form.file.$valid && $scope.file) {
-           $scope.upload($scope.file);
+           console.log('testar');
+           $scope.upload($scope.file, id);
       }
   };
 
-  $scope.upload = function (file) {
-    let projetoAtual = StorageService.getItem('idProjeto');
+  $scope.upload = function (file, id) {
+      console.log(id);
     Upload.upload({
-        url: 'http://api-hackathon.herokuapp.com/file',
-        data: {file: file, 'project_id': projetoAtual}
+        url: 'http://api-hackathon.herokuapp.com/uploadFileObjectClass/'+id,
+        data: file
     }).then(function (resp) {
         setPathScreenPlay(resp.data);
     }, function (resp) {

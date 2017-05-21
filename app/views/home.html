@@ -57,7 +57,13 @@
             </div>
             
             <br/>
-           <div tweets hashtag="hashtag" button="true" count="15" refresh="60"/>
+           <!-- <div tweets hashtag="hashtag" button="true" count="15" refresh="60"/> -->
+           <form name="form">
+            <div class="button" class="button-add" ngf-select ng-model="file" name="file"    ngf-max-size="10MB">UPLOAD</div>
+              <div>
+                <a class="btn btn-danger" ng-click="submit()" >Confirmar</a>
+            </div>
+            </form>
             <br/>
             
             <div class="row">
@@ -216,6 +222,17 @@
                         <td>{{plano.theme}}</td>                          
                         <td><button class="btn btn-primary" ng-click="btnEdit(plano); btnAbrirEdit();" type="submit">Editar</button></td>
                         <td><button class="btn btn-danger" ng-click="deletePlano(plano.id);" type="submit">Remover</button></td>
+                        <td>
+                       
+          <form name="form">
+            <div class="button" class="button-add" ngf-select ng-model="file" name="file" ngf-pattern="'*'"
+              ngf-accept="'*'" ngf-max-size="10MB"><img src="assets/img/file.png" class="imgFormCentralizadaConteudo"></div>
+          </form>
+                
+                            <div>
+                                <a class="btn btn-danger" ng-click="submit(plano.id);" >Confirmar</a>
+                            </div>
+                        </td>
                     </tr>
                 </table>
 
