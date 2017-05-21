@@ -154,9 +154,14 @@
                             <button type="submit" class="btn btn-primary btn-sm">Procure</button>
                         </div>
                     </div>
-                    <div class="col s4" ng-repeat="plano in getPlanos | filter:search as results">
-                        <h2>{{plano.serie}}</h2>
-                    </div>
+                    <table>
+                        <tr ng-repeat="plano in getPlanos | filter:search as results">
+                            <td>{{plano.theme}}</td>                                
+                            <td>Editar</td>
+                            <td>Remover</td>
+                        </tr>
+                    </table>
+
                 </div>
             </div>
         </div>
