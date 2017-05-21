@@ -36,11 +36,12 @@ function HomeController ($scope, $state, HomeService) {
                 }]
             };
         HomeService.createObjectClass(sendPlano).then((data) => {
+            getMeusPlanos();
             console.log(data);
-    })
-    .catch((err) => {
+        })
+        .catch((err) => {
         $scope.errors = err.data;
-    });
+        });
   }
 
   let getPlanos = () => {
@@ -61,6 +62,33 @@ function HomeController ($scope, $state, HomeService) {
     .catch((err) => {
         $scope.errors = err.data;
     });
+  }
+
+      $scope.copiarPlano = (plano) => {
+        let planoAtual = plano;
+        let copiarPlano =
+            {
+            "id": planoAtual.id,
+            "serie" : planoAtual.serie,
+            "theme" : planoAtual.tema,
+            "objective":[{
+                "text": planoAtual.objetivo
+            }], 
+            "content": planoAtual.conteudo,
+            "procedure":[{
+                "text": planoAtual.procedimento
+                }],
+            "strategy":[{
+                    "text": planoAtual.estrategia
+                }]
+            };
+        HomeService.copyObjectClass(copiarPlano, planoAtual.id).then((data) => {
+            getMeusPlanos();
+            console.log(data);
+        })
+        .catch((err) => {
+        $scope.errors = err.data;
+        });
   }
 
   getMeusPlanos();

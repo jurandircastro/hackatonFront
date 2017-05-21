@@ -6,7 +6,7 @@ angular.module('hackaton')
 function HomeService($http, $q, httpRequest) {
     const factory = {
         createObjectClass: (data) => {
-            const url = '/createObjectClass/' + "2";
+            const url = '/createObjectClass/' + "1";
             const method = 'POST';
             return httpRequest(url, method, data, $q, $http);
         },
@@ -18,6 +18,11 @@ function HomeService($http, $q, httpRequest) {
         allMyObjectClass: (data) => {
             const url = '/allMyObjectClass/' + "1";
             const method = 'GET';
+            return httpRequest(url, method, data, $q, $http);
+        },
+        copyObjectClass: (data, id) => {
+            const url = '/copyObjectClass/' + "1/" + id;
+            const method = 'POST';
             return httpRequest(url, method, data, $q, $http);
         },
         

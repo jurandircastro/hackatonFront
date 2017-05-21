@@ -131,7 +131,7 @@
                         <hr/>
                     </fieldset>
 
-                    <button id="submit" name="submit" class="btn btn-success" ng-click="novoPlano();" type="submit">Salvar plano</button>
+                    <button id="submit" name="submit" class="btn btn-success" ng-click="novoPlano(); btnFecharFormPlano();" type="submit">Salvar plano</button>
                     <button id="submit" name="submit" class="btn btn-primary" ng-click="btnFecharFormPlano();planos()">Cancelar</button>
 
                     </form>
@@ -161,7 +161,7 @@
                     <table>
                         <tr ng-repeat="plano in getPlanos | filter:search as results">
                             <td>{{plano.theme}}</td>  
-                            <td>Copiar</td>                              
+                            <td><a href="" ng-click="copiarPlano(plano);">Copiar</a></td>                              
                             <td>Editar</td>
                             <td>Remover</td>
                         </tr>
