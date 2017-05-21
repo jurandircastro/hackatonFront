@@ -66,75 +66,79 @@
                     </button>
                 </div>
 
-                <div class="col-sm-8 portfolio-item">
-                 <form ng-show="criarPlano">
-
-                 <fieldset class="form-group">
-                 <legend>Dados do plano de aula</legend>
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">Série</span>
-
-                        <select class="form-control" id="inlineFormCustomSelect" name="serie" ng-model="data.serie">
-                            <option selected disabled>Selecione uma série</option>
-                            <option value="3">3º ano - Ensino Médio</option>
-                            <option value="2">2º ano - Ensino Médio</option>
-                            <option value="1">1º ano - Ensino Médio</option>
-                        </select>
-                    </div>
-
-                    <br/>
-
-                    <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">Tema</span>
-                      <input type="text" class="form-control" ng-model="tema" placeholder="Tema" aria-describedby="basic-addon1">
-                    </div>   
-
-                    <br/>
-
-                    <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">Conteúdo</span>
-                      <textarea class="form-control" ng-model="conteudo" rows="5"></textarea>
-                    </div>
-                    
-                    <br/>
+                <div class="col-sm-8 portfolio-item " ng-show="criarPlano">
+                    <form>
 
                     <fieldset class="form-group">
-                    <legend>Objetivos</legend>
+                    <legend>Dados do plano de aula</legend>
                         <div class="input-group">
-                          <span class="input-group-addon" id="basic-addon1">Objetivos</span>
-                          <input type="text" class="form-control" ng-model="objetivo" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            <span class="input-group-addon" id="basic-addon1">Série</span>
+
+                            <select class="form-control" id="inlineFormCustomSelect" name="serie" ng-model="data.serie">
+                                <option selected disabled>Selecione uma série</option>
+                                <option value="3">3º ano - Ensino Médio</option>
+                                <option value="2">2º ano - Ensino Médio</option>
+                                <option value="1">1º ano - Ensino Médio</option>
+                            </select>
                         </div>
+
+                        <br/>
+
+                        <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Tema</span>
+                        <input type="text" class="form-control" ng-model="tema" placeholder="Tema" aria-describedby="basic-addon1">
+                        </div>   
+
+                        <br/>
+
+                        <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Conteúdo</span>
+                        <textarea class="form-control" ng-model="conteudo" rows="5"></textarea>
+                        </div>
+                        
+                        <br/>
+
+                        <fieldset class="form-group">
+                        <legend>Objetivos</legend>
+                            <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Objetivos</span>
+                            <input type="text" class="form-control" ng-model="objetivo" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            </div>
+                        </fieldset>
+
+                        <hr/>
+                        <br/>
+
+                        <fieldset class="form-group">
+                        <legend>Procedimentos</legend>
+                            <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Procedimento</span>
+                            <input type="text" class="form-control" ng-model="procedimento" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            </div>
+                        </fieldset>
+
+                        <hr/>
+                        <br/>
+
+                        <fieldset class="form-group">
+                        <legend>Estratégias</legend>
+                            <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Estratégia</span>
+                            <input type="text" class="form-control" ng-model="estrategia" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            </div>
+                        </fieldset>
+
+                        <hr/>
                     </fieldset>
 
-                    <hr/>
-                    <br/>
+                    <button id="submit" name="submit" class="btn btn-success" ng-click="novoPlano();" type="submit">Salvar plano</button>
+                    <button id="submit" name="submit" class="btn btn-primary" ng-click="btnFecharFormPlano();planos()">Cancelar</button>
 
-                    <fieldset class="form-group">
-                    <legend>Procedimentos</legend>
-                        <div class="input-group">
-                          <span class="input-group-addon" id="basic-addon1">Procedimento</span>
-                          <input type="text" class="form-control" ng-model="procedimento" placeholder="Objetivo" aria-describedby="basic-addon1">
-                        </div>
-                    </fieldset>
-
-                    <hr/>
-                    <br/>
-
-                    <fieldset class="form-group">
-                    <legend>Estratégias</legend>
-                        <div class="input-group">
-                          <span class="input-group-addon" id="basic-addon1">Estratégia</span>
-                          <input type="text" class="form-control" ng-model="estrategia" placeholder="Objetivo" aria-describedby="basic-addon1">
-                        </div>
-                    </fieldset>
-
-                    <hr/>
-                 </fieldset>
-
-                 <button id="submit" name="submit" class="btn btn-success" ng-click="novoPlano();" type="submit">Salvar plano</button>
-                 <button id="submit" name="submit" class="btn btn-primary" ng-click="btnFecharFormPlano();planos()">Cancelar</button>
-
-                </form>
+                    </form>
+                </div>
+                
+                <div class="col s4" ng-repeat="meuPlano in getMeusPlanos">
+                    <h2>{{meuPlano.id}}</h2>
                 </div>
 
             </div>
@@ -155,7 +159,7 @@
                         </div>
                     </div>
                     <div class="col s4" ng-repeat="plano in getPlanos | filter:search as results">
-                        <h2>{{plano.serie}}</h2>
+                        <h2>{{plano.id}}</h2>
                     </div>
                 </div>
             </div>

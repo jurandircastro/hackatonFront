@@ -44,7 +44,7 @@ function HomeController ($scope, $state, HomeService) {
   }
 
   let getPlanos = () => {
-    HomeService.allMyObjectClass().then((data) => {
+    HomeService.allObjectClassOthersTeachers().then((data) => {
         $scope.getPlanos = data.data;
         console.log(data.data);
     })
@@ -53,5 +53,16 @@ function HomeController ($scope, $state, HomeService) {
     });
   }
 
+  let getMeusPlanos = () => {
+    HomeService.allMyObjectClass().then((data) => {
+        $scope.getMeusPlanos = data.data;
+        console.log(data.data);
+    })
+    .catch((err) => {
+        $scope.errors = err.data;
+    });
+  }
+
+  getMeusPlanos();
   getPlanos();
 }
