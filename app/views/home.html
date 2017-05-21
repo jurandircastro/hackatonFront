@@ -75,7 +75,7 @@
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Série</span>
 
-                            <select class="form-control" id="inlineFormCustomSelect" name="serie" ng-model="data.serie">
+                            <select required class="form-control" id="inlineFormCustomSelect" name="serie" ng-model="data.serie">
                                 <option selected disabled>Selecione uma série</option>
                                 <option value="3">3º ano - Ensino Médio</option>
                                 <option value="2">2º ano - Ensino Médio</option>
@@ -87,14 +87,14 @@
 
                         <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Tema</span>
-                        <input type="text" class="form-control" ng-model="tema" placeholder="Tema" aria-describedby="basic-addon1">
+                        <input required type="text" class="form-control" ng-model="tema" placeholder="Tema" aria-describedby="basic-addon1">
                         </div>   
 
                         <br/>
 
                         <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Conteúdo</span>
-                        <textarea class="form-control" ng-model="conteudo" rows="5"></textarea>
+                        <textarea required class="form-control" ng-model="conteudo" rows="5"></textarea>
                         </div>
                         
                         <br/>
@@ -103,7 +103,7 @@
                         <legend>Objetivos</legend>
                             <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Objetivos</span>
-                            <input type="text" class="form-control" ng-model="objetivo" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            <input required type="text" class="form-control" ng-model="objetivo" placeholder="Objetivo" aria-describedby="basic-addon1">
                             </div>
                         </fieldset>
 
@@ -114,7 +114,7 @@
                         <legend>Procedimentos</legend>
                             <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Procedimento</span>
-                            <input type="text" class="form-control" ng-model="procedimento" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            <input required type="text" class="form-control" ng-model="procedimento" placeholder="Objetivo" aria-describedby="basic-addon1">
                             </div>
                         </fieldset>
 
@@ -125,7 +125,7 @@
                         <legend>Estratégias</legend>
                             <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Estratégia</span>
-                            <input type="text" class="form-control" ng-model="estrategia" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            <input required type="text" class="form-control" ng-model="estrategia" placeholder="Objetivo" aria-describedby="basic-addon1">
                             </div>
                         </fieldset>
 
@@ -146,7 +146,7 @@
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Série</span>
 
-                            <select class="form-control" id="inlineFormCustomSelect" name="serie" ng-model="planoAtual.serie">
+                            <select required class="form-control" id="inlineFormCustomSelect" name="serie" ng-model="planoAtual.serie">
                                 <option selected disabled>Selecione uma série</option>
                                 <option value="3">3º ano - Ensino Médio</option>
                                 <option value="2">2º ano - Ensino Médio</option>
@@ -158,14 +158,14 @@
 
                         <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Tema</span>
-                        <input type="text" class="form-control" ng-model="planoAtual.theme" placeholder="Tema" aria-describedby="basic-addon1">
+                        <input required type="text" class="form-control" ng-model="planoAtual.theme" placeholder="Tema" aria-describedby="basic-addon1">
                         </div>   
 
                         <br/>
 
                         <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Conteúdo</span>
-                        <textarea class="form-control" ng-model="planoAtual.content" rows="5"></textarea>
+                        <textarea required class="form-control" ng-model="planoAtual.content" rows="5"></textarea>
                         </div>
                         
                         <br/>
@@ -174,7 +174,7 @@
                         <legend>Objetivos</legend>
                             <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Objetivos</span>
-                            <input type="text" class="form-control" ng-model="planoAtual.objective" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            <input required type="text" class="form-control" ng-model="planoAtual.objective" placeholder="Objetivo" aria-describedby="basic-addon1">
                             </div>
                         </fieldset>
 
@@ -185,7 +185,7 @@
                         <legend>Procedimentos</legend>
                             <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Procedimento</span>
-                            <input type="text" class="form-control" ng-model="planoAtual.procedure" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            <input required type="text" class="form-control" ng-model="planoAtual.procedure" placeholder="Objetivo" aria-describedby="basic-addon1">
                             </div>
                         </fieldset>
 
@@ -196,7 +196,7 @@
                         <legend>Estratégias</legend>
                             <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Estratégia</span>
-                            <input type="text" class="form-control" ng-model="planoAtual.strategys" placeholder="Objetivo" aria-describedby="basic-addon1">
+                            <input required type="text" class="form-control" ng-model="planoAtual.strategys" placeholder="Objetivo" aria-describedby="basic-addon1">
                             </div>
                         </fieldset>
 
