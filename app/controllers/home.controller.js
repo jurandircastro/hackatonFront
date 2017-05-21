@@ -3,7 +3,7 @@
 angular.module('hackaton')
   .controller('HomeController', HomeController);
 
-function HomeController ($scope, $state, HomeService) {
+function HomeController ($scope, $state, Upload, HomeService) {
 
     $scope.criarPlano = false;
 
@@ -101,6 +101,27 @@ function HomeController ($scope, $state, HomeService) {
         $scope.errors = err.data;
         });
   }
+
+    $scope.submit = () =>{
+      if ($scope.form.file.$valid && $scope.file) {
+           $scope.upload($scope.file);
+      }
+  };
+
+  $scope.upload = function (file) {
+    let projetoAtual = StorageService.getItem('idProjeto');
+    Upload.upload({
+        url: 'http://api-hackathon.herokuapp.com/file',
+        data: {file: file, 'project_id': projetoAtual}
+    }).then(function (resp) {
+        setPathScreenPlay(resp.data);
+    }, function (resp) {
+        console.log('Error status: ' + resp.status);
+    }, function (evt) {
+        var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+        console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+    });
+  };
 
   getMeusPlanos();
   getPlanos();

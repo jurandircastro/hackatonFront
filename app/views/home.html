@@ -136,12 +136,13 @@
 
                     </form>
                 </div>
-                
+                </br>
+                </br>
                  <table>
                     <tr ng-repeat="plano in getMeusPlanos | filter:search as results">
                         <td>{{plano.theme}}</td>                          
-                        <td>Editar</td>
-                        <td><a href="" ng-click="deletePlano(plano.id);">Remover</a></td>
+                        <td><button class="btn btn-primary" type="submit">Editar</button></td>
+                        <td><button class="btn btn-danger" ng-click="deletePlano(plano.id);" type="submit">Remover</button></td>
                     </tr>
                 </table>
 
@@ -162,10 +163,12 @@
                             <button type="submit" class="btn btn-primary btn-sm">Procure</button>
                         </div>
                     </div>
+                    </br>
+                    </br>
                     <table>
                         <tr ng-repeat="plano in getPlanos | filter:search as results">
                             <td>{{plano.theme}}</td>  
-                            <td><a href="" ng-click="copiarPlano(plano);">Copiar</a></td>
+                            <td><button class="btn btn-default" ng-click="copiarPlano(plano);" type="submit">Copiar</button></td>
                         </tr>
                     </table>
                 </div>
